@@ -1,0 +1,48 @@
+<!-- Homepage Main Section-->
+<div class="main">
+  <section class="split-home">
+    <section class="left-section wow fadeIn" data-wow-delay=".2s"></section>
+    <section class="right-section">
+      <a href="#" class="logo hidden-xs hidden-sm"
+        ><img src="/assets/images/logo.png" width="35" height="35" alt="Logo"
+      /></a>
+      <div class="portfolio-single">
+        <div class="project-details">
+          <h4 class="wow fadeInLeft" data-wow-delay=".1s">
+            <%= blog.contentType%>
+          </h4>
+          <h1 class="wow fadeInLeft" data-wow-delay=".2s">
+            <%= blog.title%>
+          </h1>
+          <p class="wow fadeInLeft" data-wow-delay=".3s">
+            <%= blog.content%>
+          </p>
+          <div class="project-images wow fadeInLeft" data-wow-delay=".4s">
+            <!-- <img src="/assets/images/project-image.jpg" alt="project image" /> -->
+          </div>
+          <div class="container-fluid">
+            <div class="row project-sub-details">
+              <div class="col-sm-6">
+                <p>
+                  <span>Author:</span> <%= author.firstName%> <%=
+                  author.secondName%>
+                </p>
+                <!-- <p><span>Date:</span> Smart Watch Design</p> -->
+              </div>
+              <div class="col-sm-6">
+                <!-- <p><span>Date:</span> <%= blog.createdAt%></p> -->
+                <!-- <p>
+                  <span>Visit:</span>
+                  <a href="http://example.com/">example.com</a>
+                </p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Split Home -->
+      <%- include('./partials/footer') -%>
+    </section>
+  </section>
+</div>
+<!-- Main-->

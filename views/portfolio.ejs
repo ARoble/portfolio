@@ -1,0 +1,48 @@
+<% portfolio.forEach(portfolio =>{ %> <%= portfolio.title%> <% }) %>
+<!-- Homepage Main Section-->
+<div class="main">
+  <section class="split-home">
+    <section class="left-section wow fadeIn" data-wow-delay=".2s"></section>
+    <section class="right-section">
+      <a href="#" class="logo hidden-xs hidden-sm"
+        ><img src="assets/images/logo.png" width="35" height="35" alt="Logo"
+      /></a>
+      <div class="portfolio-split">
+        <div class="portfolio-intro">
+          <span class="wow fadeInDown" data-wow-delay=".1s">Portfolio</span>
+          <h1 class="wow fadeInDown" data-wow-delay=".2s">
+            All this a set of pieces of creative work intended to demonstrate my
+            ability to a potential employer.
+          </h1>
+          <!-- Portfolio Start -->
+          <div class="portfolio-split-items text-center">
+            <div class="grid" id="basicExample">
+              <% portfolio.forEach(portfolio =>{ %>
+              <a
+                class="wow fadeInDown"
+                data-wow-delay=".3s"
+                href="portfolio/<%= portfolio.id%>"
+              >
+                <img
+                  class="img-responsive"
+                  alt=" <%= portfolio.title%>"
+                  src="<%= portfolio.backimage%>"
+                />
+                <div class="overlay">
+                  <div class="overlay-items">
+                    <p>
+                      <%= portfolio.title%>
+                  
+             
+            </div>
+          </div>
+          </a>
+          <% }) %>
+        </div>
+      </div>
+      <!-- Footer Split Home -->
+      <%- include('./partials/footer') -%>
+    </section>
+  </section>
+</div>
+<!-- Main-->
