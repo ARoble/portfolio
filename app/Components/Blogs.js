@@ -1,4 +1,5 @@
-import Blog from "./blog";
+import Blog from "./Blog";
+
 export default function Blogs() {
   return (
     <div className="py-8 space-y-3">
