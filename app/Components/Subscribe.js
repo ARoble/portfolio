@@ -1,7 +1,7 @@
 export default function Subscribe() {
   return (
     <div className="bg-darkGray rounded-lg p-10 text-center">
-      <h1 className="">Subscribe to my newsletter</h1>
+      <h2 className="">Subscribe to my newsletter</h2>
       <p className="text-gray py-4 px-10">
         Monthly blogs on various different topics like tech, africa,
         programming, my journey and more!

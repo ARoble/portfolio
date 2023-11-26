@@ -123,14 +123,18 @@ export default function About() {
       <div className="py-5">
         <div className="grid grid-cols-4">
           <div className="text-gray">Work</div>
-          <div className="col-span-3 hover:text-gray hover:cursor-pointer">
+          <div className="col-span-3 ">
             <p>
               I'm a passionate full stack developer with a strong knack for
               problem-solving. When I'm not immersed in coding, you can find
             </p>
-            <div className="py-5 space-y-3">
+            <div className="py-5 space-y-5">
               {/* JOB */}
-              <div className="flex justify-between">
+              <Link
+                href="https://www.fikrcamp.com"
+                target="_blank"
+                className="flex justify-between hover:text-gray hover:cursor-pointer"
+              >
                 <div className="flex items-center space-x-2">
                   <img src="/fikrcamplogo.png" className="h-14 rounded-full" />
                   <div>
@@ -139,10 +143,14 @@ export default function About() {
                   </div>
                 </div>
                 <h2 className="text-gray">2021 - </h2>
-              </div>
+              </Link>
               {/* JOB */}
               {/* JOB */}
-              <div className="flex justify-between">
+              <Link
+                href="https://www.dalbofood.com"
+                target="_blank"
+                className="flex justify-between hover:text-gray hover:cursor-pointer"
+              >
                 <div className="flex items-center space-x-2">
                   <img src="/dalbofood.jpg" className="h-14 rounded-full" />
                   <div>
@@ -151,7 +159,7 @@ export default function About() {
                   </div>
                 </div>
                 <h2 className="text-gray">2017 - 2018</h2>
-              </div>
+              </Link>
               {/* JOB */}
             </div>
           </div>

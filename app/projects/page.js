@@ -7,6 +7,7 @@ export const metadata = {
   title: "Projects | Roble",
   description: "...",
 };
+
 export default function Page() {
   return (
     <div className=" items-center py-7">

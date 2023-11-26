@@ -7,20 +7,40 @@ import {
 import Link from "next/link";
 import Blogs from "./Components/Blogs";
 import Arsenal from "./Components/Intro";
+import { getAllBlogs } from "./lib/blog";
+import Image from "next/image";
 
 export const metadata = {
   title: "Home | Roble",
   description: "...",
 };
 
-export default function Home() {
+const technologies = [
+  { name: "Typescript", image: "/typescript.png" },
+  { name: "React", image: "/react.png" },
+  { name: "Redux", image: "/redux.png" },
+  { name: "Node JS", image: "/node.png" },
+  { name: "Next JS", image: "/next.png" },
+  { name: "MongoDB", image: "/mongo.png" },
+  { name: "Tailwind CSS", image: "/tailwind.png" },
+];
+
+export default async function Home() {
+  const { blogs } = await getAllBlogs();
+
   return (
     <div className="py-5">
       <Arsenal />
 
       <div className="flex items-center space-x-5 pt-8">
         <div>
-          <img src="/roble.jpg" className="h-28 rounded-full" />
+          <Image
+            src="/roble1.jpg"
+            className="h-36 w-36 object-cover rounded-full"
+            height={144}
+            width={144}
+            alt="Roble"
+          />
         </div>
         <div className="space-y-1">
           <Link
@@ -71,44 +91,27 @@ export default function Home() {
 
       {/* TECHNOLOGIES  */}
       <div className="py-5">
-        <h2 className="text-gray">What im familiar with:</h2>
-        <div className="flex space-x-1 mt-4">
-          <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/typescript.png" className="h-4" />
-            <h2 className="text-xs">Typescript</h2>
-          </div>
-          <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/react.png" className="h-4" />
-            <h2 className="text-xs">React</h2>
-          </div>
-          <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/redux.png" className="h-4" />
-            <h2 className="text-xs">Redux</h2>
-          </div>
-          <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/node.png" className="h-4" />
-            <h2 className="text-xs">Node JS</h2>
-          </div>
-          <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/next.png" className="h-4" />
-            <h2 className="text-xs">Next JS</h2>
-          </div>
-          <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/mongo.png" className="h-4" />
-            <h2 className="text-xs">MongoDB</h2>
-          </div>
-          <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/tailwind.png" className="h-3" />
-            <h2 className="text-xs">Tailwind CSS</h2>
-          </div>
+        <h3 className="text-gray">What im familiar with:</h3>
+        <div className="flex flex-wrap gap-1 mt-4">
+          {technologies.map((technology, index) => (
+            <div
+              key={index}
+              className="flex items-center space-x-1 border border-dark py-1 px-1.5  rounded-sm bg-darkGray "
+            >
+              <img src={technology.image} className="h-4" />
+              <h2 className="text-xs">{technology.name}</h2>
+            </div>
+          ))}
         </div>
       </div>
       {/* TECHNOLOGIES  */}
 
       {/* BLOG SECTION */}
       <div className="py-5">
-        <h2 className="text-gray">Latests posts</h2>
-        <Blogs />
+        <h3 className="text-gray">Latests posts</h3>
+
+        <Blogs blogs={blogs} />
+
         <Link
           href="/blog"
           className="text-gray underline hover:text-white hover:cursor-pointer"

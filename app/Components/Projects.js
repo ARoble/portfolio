@@ -1,3 +1,4 @@
+// import "use-server";
 import Link from "next/link";
 
 export default function Projects() {
@@ -11,8 +12,8 @@ export default function Projects() {
           <img src="./ecommerece.png" className="rounded" />
         </div>
         <div className="flex flex-col justify-center r">
-          <h2>E-commerece site</h2>
-          <p className="text-gray py-2">
+          <h3>E-commerece site</h3>
+          <p className="text-gray py-2 text-sm">
             Design a small ecommerece site where my goal was to learn
             technologies new to me such as redux and redux-toolkit
           </p>

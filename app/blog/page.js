@@ -1,12 +1,13 @@
 import Subscribe from "../Components/Subscribe";
 import Blogs from "../Components/Blogs";
-
+import { getAllBlogs } from "../lib/blog";
 export const metadata = {
   title: "Blog | Roble",
   description: "...",
 };
 
-export default function Blog() {
+export default async function Blog() {
+  const { blogs } = await getAllBlogs();
   return (
     <div className=" items-center py-7">
       <div>
@@ -16,7 +17,7 @@ export default function Blog() {
         </h2>
       </div>
       <div className="py-8">
-        <Blogs />
+        <Blogs blogs={blogs} />
       </div>
       {/* BLOG */}
       {/* SUBSCRIBE */}

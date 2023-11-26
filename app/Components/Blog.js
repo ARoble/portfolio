@@ -1,11 +1,14 @@
 import Link from "next/link";
+import dateFormat from "dateformat";
 
-export default function Blog() {
+export default function Blog({ blog }) {
   return (
-    <Link href="/blog/something" className="grid grid-cols-4">
-      <div className="text-gray">Oct 21, 2024</div>
+    <Link href={`/blog/${blog.slug}`} className="grid grid-cols-4">
+      <div className="text-gray">
+        {dateFormat(blog.published, "mmm dd, yyyy")}
+      </div>
       <div className="col-span-3 hover:text-gray hover:cursor-pointer">
-        Learn Git basics
+        {blog.title}
       </div>
     </Link>
   );

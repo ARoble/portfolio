@@ -11,12 +11,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" class="dark">
+    <html lang="en" className="dark">
       <head>
         <link rel="icon" href="/ar.png" sizes="any" />
       </head>
       <body className="dark-mode">
-        <div className="w-[36%] mx-auto">
+        <div className="px-10 md:px-0 md:w-[60%] lg:w-[50%] xl:w-[35%] mx-auto">
           <Header />
           {children}
         </div>
