@@ -43,15 +43,17 @@ export default async function Single({ params }) {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.UL_LIST]: (node, children) => (
         <ul className="ml-10 pb-4">
-          {node.content.map((content) => (
-            <li className="list-disc">{content.content[0].content[0].value}</li>
+          {node.content.map((content, index) => (
+            <li className="list-disc" key={index}>
+              {content.content[0].content[0].value}
+            </li>
           ))}
         </ul>
       ),
       [BLOCKS.OL_LIST]: (node, children) => (
         <ol className="ml-10 pb-4">
-          {node.content.map((content) => (
-            <li className="list-decimal">
+          {node.content.map((content, index) => (
+            <li className="list-decimal" key={index}>
               {content.content[0].content[0].value}
             </li>
           ))}
@@ -74,6 +76,7 @@ export default async function Single({ params }) {
                 language="javascript"
                 style={vs2015}
                 className="text-sm"
+                key={secondIndex}
               >
                 {code.value}
               </SyntaxHighlighter>
