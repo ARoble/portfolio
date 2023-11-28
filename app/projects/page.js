@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Projects from "../Components/Projects";
 
-import { Metadata } from "next";
-
 export const metadata = {
   title: "Projects | Roble",
   description: "...",

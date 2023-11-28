@@ -13,7 +13,7 @@ export async function getAllBlogs() {
 
     return data.json();
   } catch (e) {
-    console.log("error");
+    console.log(e);
   }
 }
 
@@ -25,6 +25,6 @@ export async function getOneBlog({ slug }) {
 
     return data.json();
   } catch (e) {
-    console.log("error");
+    console.log(e);
   }
 }
