@@ -13,80 +13,80 @@ export const metadata = {
 };
 
 export default async function Single({ params }) {
-  const { blogs } = await getOneBlog(params);
+  // const { blogs } = await getOneBlog(params);
 
-  const Text = ({ children }) => (
-    <p className="">
-      {children}
-      <br />
-      <br />
-    </p>
-  );
+  // const Text = ({ children }) => (
+  //   <p className="">
+  //     {children}
+  //     <br />
+  //     <br />
+  //   </p>
+  // );
 
-  let options = {
-    preserveWhitespace: true,
-    renderMark: {
-      [MARKS.CODE]: (text) => (
-        <span className="bg-dark text-orange px-[5px] py-[1px] rounded ">
-          {text}
-        </span>
-      ),
-    },
-    renderNode: {
-      [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>,
-      [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
-      [BLOCKS.HEADING_3]: (node, children) => <h3>{children}</h3>,
-      [BLOCKS.HEADING_4]: (node, children) => <h4>{children}</h4>,
-      [BLOCKS.HEADING_5]: (node, children) => <h5>{children}</h5>,
-      [BLOCKS.HEADING_6]: (node, children) => <h6>{children}</h6>,
-      [BLOCKS.HR]: (node, children) => <hr className="py-3" />,
-      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-      [BLOCKS.UL_LIST]: (node, children) => (
-        <ul className="ml-10 pb-4">
-          {node.content.map((content, index) => (
-            <li className="list-disc" key={index}>
-              {content.content[0].content[0].value}
-            </li>
-          ))}
-        </ul>
-      ),
-      [BLOCKS.OL_LIST]: (node, children) => (
-        <ol className="ml-10 pb-4">
-          {node.content.map((content, index) => (
-            <li className="list-decimal" key={index}>
-              {content.content[0].content[0].value}
-            </li>
-          ))}
-        </ol>
-      ),
-      "embedded-asset-block": (node) => (
-        <Image
-          className="rounded my-3"
-          height={node.data.target.fields.file.details.image.height}
-          width={node.data.target.fields.file.details.image.width}
-          alt="Blog image"
-          src={`http:${node.data.target.fields.file.url}`}
-        />
-      ),
-      "embedded-entry-inline": (node) => (
-        <>
-          {node.data.target.fields.snippet.content.map((content, firstIndex) =>
-            content.content.map((code, secondIndex) => (
-              <SyntaxHighlighter
-                language="javascript"
-                style={vs2015}
-                className="text-sm"
-                key={secondIndex}
-              >
-                {code.value}
-              </SyntaxHighlighter>
-            ))
-          )}
-        </>
-      ),
-    },
-  };
-
+  // let options = {
+  //   preserveWhitespace: true,
+  //   renderMark: {
+  //     [MARKS.CODE]: (text) => (
+  //       <span className="bg-dark text-orange px-[5px] py-[1px] rounded ">
+  //         {text}
+  //       </span>
+  //     ),
+  //   },
+  //   renderNode: {
+  //     [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>,
+  //     [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
+  //     [BLOCKS.HEADING_3]: (node, children) => <h3>{children}</h3>,
+  //     [BLOCKS.HEADING_4]: (node, children) => <h4>{children}</h4>,
+  //     [BLOCKS.HEADING_5]: (node, children) => <h5>{children}</h5>,
+  //     [BLOCKS.HEADING_6]: (node, children) => <h6>{children}</h6>,
+  //     [BLOCKS.HR]: (node, children) => <hr className="py-3" />,
+  //     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+  //     [BLOCKS.UL_LIST]: (node, children) => (
+  //       <ul className="ml-10 pb-4">
+  //         {node.content.map((content, index) => (
+  //           <li className="list-disc" key={index}>
+  //             {content.content[0].content[0].value}
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     ),
+  //     [BLOCKS.OL_LIST]: (node, children) => (
+  //       <ol className="ml-10 pb-4">
+  //         {node.content.map((content, index) => (
+  //           <li className="list-decimal" key={index}>
+  //             {content.content[0].content[0].value}
+  //           </li>
+  //         ))}
+  //       </ol>
+  //     ),
+  //     "embedded-asset-block": (node) => (
+  //       <Image
+  //         className="rounded my-3"
+  //         height={node.data.target.fields.file.details.image.height}
+  //         width={node.data.target.fields.file.details.image.width}
+  //         alt="Blog image"
+  //         src={`http:${node.data.target.fields.file.url}`}
+  //       />
+  //     ),
+  //     "embedded-entry-inline": (node) => (
+  //       <>
+  //         {node.data.target.fields.snippet.content.map((content, firstIndex) =>
+  //           content.content.map((code, secondIndex) => (
+  //             <SyntaxHighlighter
+  //               language="javascript"
+  //               style={vs2015}
+  //               className="text-sm"
+  //               key={secondIndex}
+  //             >
+  //               {code.value}
+  //             </SyntaxHighlighter>
+  //           ))
+  //         )}
+  //       </>
+  //     ),
+  //   },
+  // };
+  return <h1>hi</h1>;
   return (
     <div className=" py-7">
       <h2 className="text-2xl font-bold">{blogs.title}</h2>
