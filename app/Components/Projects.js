@@ -1,5 +1,5 @@
-// import "use-server";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Projects() {
   return (
@@ -9,7 +9,13 @@ export default function Projects() {
         className="grid grid-cols-2 gap-5 hover:cursor-pointer "
       >
         <div>
-          <img src="./ecommerece.png" className="rounded" />
+          <Image
+            src="/ecommerece.png"
+            width={400}
+            height={200}
+            alt="project image"
+            className="rounded"
+          />
         </div>
         <div className="flex flex-col justify-center r">
           <h3>E-commerece site</h3>
@@ -19,15 +25,27 @@ export default function Projects() {
           </p>
           <div className="flex space-x-1">
             <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-              <img src="react.png" className="h-3" />
+              <Image
+                src="/react.png"
+                className="h-3"
+                height={12}
+                width={14}
+                alt="React js"
+              />
               <h2 className="text-xs">React</h2>
             </div>
             <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-              <img src="node.png" className="h-3" />
+              <Image
+                src="/node.png"
+                className="h-3"
+                height={12}
+                width={11}
+                alt="Node js"
+              />
               <h2 className="text-xs">Node JS</h2>
             </div>
             <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-              <img src="tailwind.png" className="h-3" />
+              <Image src="/tailwind.png" height={8} width={17} alt="Tailwind" />
               <h2 className="text-xs">Tailwind CSS</h2>
             </div>
           </div>

@@ -2,7 +2,7 @@
 //Get all blogs
 //Get limited amount of blogs
 
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = process.env.BASE_URL;
 
 export async function getAllBlogs() {
   //TODO: PASS A LIMIT FOR THE HOMEPAGE
@@ -14,6 +14,7 @@ export async function getAllBlogs() {
     return data.json();
   } catch (e) {
     console.log(e);
+    console.log(process.env.BASE_URL);
   }
 }
 

@@ -6,7 +6,7 @@ import {
 } from "react-icons/ai";
 import { RxArrowTopRight } from "react-icons/rx";
 import Link from "next/link";
-
+import Image from "next/image";
 export const metadata = {
   title: "About | Roble",
   description: "...",
@@ -23,27 +23,58 @@ export default function About() {
       <div className="py-10">
         <div className="grid grid-cols-4 gap-2">
           <div className="row-span-2">
-            <img
+            <Image
               src="/hawasa.JPEG"
               className="rounded-md shadow-md h-full object-cover"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "100%" }}
+              alt="travel pic"
             />
           </div>
           <div className="col-span-2">
-            <img src="/grad.JPEG" className="rounded-md shadow-md " />
+            <Image
+              src="/grad.JPEG"
+              className="rounded-md shadow-md "
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "100%" }}
+              alt="Bootcamp graduation pic"
+            />
           </div>
           <div className="">
-            <img
+            <Image
               src="/grad2.JPEG"
               className="rounded-md shadow-md h-full object-cover"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "100%" }}
+              alt="Bootcamp graduation pic"
             />
           </div>
           <div className="col-span-2">
-            <img src="/week.JPG" className="rounded-md shadow-md" />
+            <Image
+              src="/week.JPG"
+              className="rounded-md shadow-md"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "100%" }}
+              alt="coding session pic"
+            />
           </div>
           <div>
-            <img
+            <Image
               src="/workshop.JPG"
               className="rounded-md shadow-md h-full object-cover"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "100%" }}
+              alt="Workshop photo"
             />
           </div>
         </div>
@@ -77,7 +108,7 @@ export default function About() {
             <div className="border rounded-md border-dark py-3 px-4 flex items-center justify-between">
               <div className="flex items-center">
                 <AiOutlineMail size={23} />
-                <h2 className="pl-1">Email</h2>
+                <h4 className="pl-1">Email</h4>
               </div>
               <RxArrowTopRight />
             </div>
@@ -88,7 +119,7 @@ export default function About() {
             >
               <div className="flex items-center">
                 <AiOutlineTwitter size={23} />
-                <h2 className="pl-1">Twitter</h2>
+                <h4 className="pl-1">Twitter</h4>
               </div>
               <RxArrowTopRight />
             </Link>
@@ -99,7 +130,7 @@ export default function About() {
             >
               <div className="flex items-center">
                 <AiOutlineGithub size={23} />
-                <h2 className="pl-1">Github</h2>
+                <h4 className="pl-1">Github</h4>
               </div>
               <RxArrowTopRight />
             </Link>
@@ -111,7 +142,7 @@ export default function About() {
             >
               <div className="flex items-center">
                 <AiFillLinkedin size={23} />
-                <h2 className="pl-1">LinkedIn</h2>
+                <h4 className="pl-1">LinkedIn</h4>
               </div>
               <RxArrowTopRight />
             </Link>
@@ -136,13 +167,19 @@ export default function About() {
                 className="flex justify-between hover:text-gray hover:cursor-pointer"
               >
                 <div className="flex items-center space-x-2">
-                  <img src="/fikrcamplogo.png" className="h-14 rounded-full" />
+                  <Image
+                    src="/fikrcamplogo.png"
+                    className="h-14 rounded-full"
+                    height={56}
+                    width={56}
+                    alt="fikrcamp"
+                  />
                   <div>
-                    <h1>Fikrcamp</h1>
-                    <h1 className="text-gray">Lead Instructor</h1>
+                    <h3>Fikrcamp</h3>
+                    <h4 className="text-gray">Lead Instructor</h4>
                   </div>
                 </div>
-                <h2 className="text-gray">2021 - </h2>
+                <h4 className="text-gray">2021 - </h4>
               </Link>
               {/* JOB */}
               {/* JOB */}
@@ -152,13 +189,19 @@ export default function About() {
                 className="flex justify-between hover:text-gray hover:cursor-pointer"
               >
                 <div className="flex items-center space-x-2">
-                  <img src="/dalbofood.jpg" className="h-14 rounded-full" />
+                  <Image
+                    src="/dalbofood.jpg"
+                    className="h-14 rounded-full"
+                    width={56}
+                    height={56}
+                    alt="dalbofood"
+                  />
                   <div>
-                    <h1>Dalbofood</h1>
-                    <h1 className="text-gray">Web developer</h1>
+                    <h3>Dalbofood</h3>
+                    <h4 className="text-gray">Web developer</h4>
                   </div>
                 </div>
-                <h2 className="text-gray">2017 - 2018</h2>
+                <h4 className="text-gray">2017 - 2018</h4>
               </Link>
               {/* JOB */}
             </div>

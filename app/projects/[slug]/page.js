@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export async function generateMetadata({ params }) {
   // read route params
   const slug = params.slug;
@@ -13,22 +15,22 @@ export default function Single({ params }) {
     <div className=" py-7">
       <h2 className="text-2xl font-bold">Ecommerece Site</h2>
       <div className="py-3">
-        <h2 className="text-gray pb-1">Tech stack</h2>
+        <h4 className="text-gray pb-1">Tech stack</h4>
         <div className="flex space-x-1 ">
           <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/react.png" className="h-4" />
+            <Image src="/react.png" height={16} width={16} alt="React js" />
             <h2 className="text-xs">React</h2>
           </div>
           <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/node.png" className="h-4" />
+            <Image src="/node.png" height={16} width={16} alt="React js" />
             <h2 className="text-xs">Node JS</h2>
           </div>
           <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/mongo.png" className="h-4" />
+            <Image src="/mongo.png" height={16} width={16} alt="React js" />
             <h2 className="text-xs">MongoDB</h2>
           </div>
           <div className="flex items-center space-x-1 border border-dark py-1 px-1.5 rounded-sm bg-darkGray ">
-            <img src="/tailwind.png" className="h-3" />
+            <Image src="/tailwind.png" height={16} width={18} alt="React js" />
             <h2 className="text-xs">Tailwind CSS</h2>
           </div>
         </div>

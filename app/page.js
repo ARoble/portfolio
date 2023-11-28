@@ -16,13 +16,13 @@ export const metadata = {
 };
 
 const technologies = [
-  { name: "Typescript", image: "/typescript.png" },
-  { name: "React", image: "/react.png" },
-  { name: "Redux", image: "/redux.png" },
-  { name: "Node JS", image: "/node.png" },
-  { name: "Next JS", image: "/next.png" },
-  { name: "MongoDB", image: "/mongo.png" },
-  { name: "Tailwind CSS", image: "/tailwind.png" },
+  { name: "Typescript", image: "/typescript.png", height: 16, width: 16 },
+  { name: "React", image: "/react.png", height: 16, width: 16 },
+  { name: "Redux", image: "/redux.png", height: 16, width: 16 },
+  { name: "Node JS", image: "/node.png", height: 16, width: 16 },
+  { name: "Next JS", image: "/next.png", height: 16, width: 16 },
+  { name: "MongoDB", image: "/mongo.png", height: 16, width: 16 },
+  { name: "Tailwind CSS", image: "/tailwind.png", height: 13, width: 18 },
 ];
 
 export default async function Home() {
@@ -98,7 +98,12 @@ export default async function Home() {
               key={index}
               className="flex items-center space-x-1 border border-dark py-1 px-1.5  rounded-sm bg-darkGray "
             >
-              <img src={technology.image} className="h-4" />
+              <Image
+                src={technology.image}
+                height={technology.height}
+                width={technology.width}
+                alt={technology.name}
+              />
               <h2 className="text-xs">{technology.name}</h2>
             </div>
           ))}
