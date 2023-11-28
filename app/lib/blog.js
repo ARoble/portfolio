@@ -2,7 +2,7 @@
 //Get all blogs
 //Get limited amount of blogs
 
-const BASE_URL = "https://portfolio-azure-nine-71.vercel.app/api";
+const BASE_URL = "http://localhost:3000/api";
 
 export async function getAllBlogs() {
   //TODO: PASS A LIMIT FOR THE HOMEPAGE

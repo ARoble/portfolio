@@ -1,5 +1,3 @@
-import { Metadata } from "next";
-
 export async function generateMetadata({ params }) {
   // read route params
   const slug = params.slug;
