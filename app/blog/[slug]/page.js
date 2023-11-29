@@ -18,6 +18,7 @@ async function getOneBlog({ slug }) {
   });
 
   if (!data.ok) {
+    console.log(data);
     throw new Error("Failed to fetch data");
   }
   return data.json();
