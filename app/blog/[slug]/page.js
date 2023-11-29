@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 async function getOneBlog({ slug }) {
-  const data = await fetch(`${process.env.BASE_URL}/bog?slug=${slug}`, {
+  const data = await fetch(`${process.env.BASE_URL}/blog?slug=${slug}`, {
     cache: "no-store",
   });
 
