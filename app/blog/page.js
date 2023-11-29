@@ -1,6 +1,7 @@
 import Subscribe from "../Components/Subscribe";
 import Blogs from "../Components/Blogs";
 import { getAllBlogs } from "../lib/blog";
+export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Blog | Roble",
   description: "...",
