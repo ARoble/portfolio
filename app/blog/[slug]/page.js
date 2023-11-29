@@ -13,15 +13,12 @@ export const metadata = {
 };
 
 async function getOneBlog({ slug }) {
-  const data = await fetch(`${process.env.BASE_URL}/blog?slug=${slug}`, {
+  const data = await fetch(`${process.env.BASE_URL}/bog?slug=${slug}`, {
     cache: "no-store",
   });
 
   if (!data.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    // throw new Error('Failed to fetch data')
-    console.log(data);
-    return { blogs: [] };
+    throw new Error("Failed to fetch data");
   }
   return data.json();
 }
