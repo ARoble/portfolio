@@ -7,10 +7,15 @@ export const metadata = {
 };
 
 async function fetchBlogs() {
-  const blogs = await fetch(`${process.env.BASE_URL}/blog`, {
-    cache: "no-store",
-  });
-  return blogs.json();
+  try {
+    const blogs = await fetch(`${process.env.BASE_URL}/blog`, {
+      cache: "no-store",
+    });
+    return blogs.json();
+  } catch (e) {
+    console.log("Error parsing data:", e);
+    console.log(process.env.BASE_URL);
+  }
 }
 
 export default async function Blog() {
