@@ -19,6 +19,8 @@ async function getOneBlog({ slug }) {
 
   if (!data.ok) {
     console.log(data);
+    console.log(process.env.CONTENTFUL_SPACE_ID);
+    console.log(process.env.CONTENTFUL_ACCESS_KEY);
     throw new Error("Failed to fetch data");
   }
   return data.json();
