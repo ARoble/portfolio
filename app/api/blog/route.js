@@ -24,6 +24,6 @@ export async function GET(req) {
 
     return NextResponse.json({ blogs });
   } catch (e) {
-    return NextResponse.json({ message: "error" });
+    return NextResponse.json({ message: e });
   }
 }
