@@ -17,6 +17,12 @@ async function getOneBlog({ slug }) {
     cache: "no-store",
   });
 
+  if (!data.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    // throw new Error('Failed to fetch data')
+    console.log(data);
+    return { blogs: [] };
+  }
   return data.json();
 }
 
