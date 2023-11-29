@@ -25,13 +25,19 @@ const technologies = [
   { name: "Tailwind CSS", image: "/tailwind.png", height: 13, width: 18 },
 ];
 
+async function fetchBlogs() {
+  const blogs = await fetch(`${process.env.BASE_URL}/blog`, {
+    cache: "no-store",
+  });
+  return blogs.json();
+}
+
 export default async function Home() {
-  const { blogs } = await getAllBlogs();
+  const { blogs } = await fetchBlogs();
 
   return (
     <div className="py-5">
       <Arsenal />
-
       <div className="flex items-center space-x-5 pt-8">
         <div>
           <Image
@@ -88,7 +94,6 @@ export default async function Home() {
           not wrestling with bugs, you can find me chasing a ball.
         </p>
       </div>
-
       {/* TECHNOLOGIES  */}
       <div className="py-5">
         <h3 className="text-gray">What im familiar with:</h3>
@@ -110,7 +115,6 @@ export default async function Home() {
         </div>
       </div>
       {/* TECHNOLOGIES  */}
-
       {/* BLOG SECTION */}
       <div className="py-5">
         <h3 className="text-gray">Latests posts</h3>

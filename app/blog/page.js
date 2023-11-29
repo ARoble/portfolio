@@ -6,8 +6,15 @@ export const metadata = {
   description: "...",
 };
 
+async function fetchBlogs() {
+  const blogs = await fetch(`${process.env.BASE_URL}/blog`, {
+    cache: "no-store",
+  });
+  return blogs.json();
+}
+
 export default async function Blog() {
-  // const { blogs } = await getAllBlogs();
+  const { blogs } = await fetchBlogs();
   return (
     <div className=" items-center py-7">
       <div>
@@ -16,7 +23,9 @@ export default async function Blog() {
           My thoughts and some coding topics for you!
         </h2>
       </div>
-      <div className="py-8">{/* <Blogs blogs={blogs} /> */}</div>
+      <div className="py-8">
+        <Blogs blogs={blogs} />
+      </div>
       {/* BLOG */}
       {/* SUBSCRIBE */}
       <Subscribe />
