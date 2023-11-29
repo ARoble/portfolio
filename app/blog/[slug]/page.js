@@ -104,12 +104,12 @@ export default async function Single({ params }) {
 
   return (
     <div className=" py-7">
-      <h2 className="text-2xl font-bold">{blogs.title}</h2>
+      <h2 className="text-2xl font-bold">{blogs?.title}</h2>
       <h4 className="text-gray">
-        {dateFormat(blogs.published, "mmm dd, yyyy")} (12 days ago)
+        {dateFormat(blogs?.published, "mmm dd, yyyy")} (12 days ago)
       </h4>
       <div className="pt-2">
-        {blogs.blogType.map((type, index) => (
+        {blogs?.blogType.map((type, index) => (
           <h1
             key={index}
             className="bg-dark w-fit px-2.5 py-1.5 text-xs rounded"
@@ -118,7 +118,7 @@ export default async function Single({ params }) {
           </h1>
         ))}
       </div>
-      <div className="py-5">{renderRichText(blogs.content, options)}</div>
+      <div className="py-5">{renderRichText(blogs?.content, options)}</div>
       <Subscribe />
     </div>
   );
