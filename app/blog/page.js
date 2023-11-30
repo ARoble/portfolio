@@ -1,7 +1,7 @@
 import Subscribe from "../Components/Subscribe";
 import Blogs from "../Components/Blogs";
 import { getAllBlogs } from "../lib/blog";
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Blog | Roble",
   description: "...",
@@ -20,8 +20,9 @@ async function fetchBlogs() {
 }
 
 export default async function Blog() {
-  const { blogs } = [];
-  // const { blogs } = await fetchBlogs();
+  // const { blogs } = [];
+
+  const { blogs } = await fetchBlogs();
   return (
     <div className=" items-center py-7">
       <div>
