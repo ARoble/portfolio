@@ -24,6 +24,7 @@ export async function GET(req) {
 
     return NextResponse.json({ blogs });
   } catch (e) {
+    console.log("server", e);
     return NextResponse.json({ message: e });
   }
 }
