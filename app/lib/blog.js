@@ -1,7 +1,7 @@
 //Get one blog [slug]
 //Get all blogs
 //Get limited amount of blogs
-
+export const dynamic = "force-dynamic";
 const BASE_URL = process.env.BASE_URL;
 
 export async function getAllBlogs() {
