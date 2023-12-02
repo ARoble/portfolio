@@ -8,7 +8,7 @@ const client = contentful.createClient({
 
 export async function GET(req) {
   try {
-    // const searchParams = req.nextUrl.searchParams;
+    const searchParams = req.nextUrl.searchParams;
     const slug = searchParams.get("slug");
     // const limit = searchParams.get("limit");
 
@@ -24,7 +24,7 @@ export async function GET(req) {
 
     const response = await client.getEntries({
       content_type: "blog",
-      "fields.slug": slug,
+      // "fields.slug": slug,
     });
 
     return NextResponse.json({ response });
