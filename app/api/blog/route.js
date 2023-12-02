@@ -11,24 +11,19 @@ export async function GET(req) {
   try {
     const searchParams = req.nextUrl.searchParams;
     const slug = searchParams.get("slug");
-    // const limit = searchParams.get("limit");
-
-    // const response = await client.getEntries({
-    //   content_type: "blog",
-    //   "fields.slug": slug,
-    // });
-
-    // let blogs = response.items.map((blog) => {
-    //   return blog.fields;
-    // });
-    // if (blogs.length === 1 && slug != null) blogs = blogs[0];
+    const limit = searchParams.get("limit");
 
     const response = await client.getEntries({
       content_type: "blog",
-      // "fields.slug": slug,
+      "fields.slug": slug,
     });
 
-    return NextResponse.json({ response });
+    let blogs = response.items.map((blog) => {
+      return blog.fields;
+    });
+    if (blogs.length === 1 && slug != null) blogs = blogs[0];
+
+    return NextResponse.json({ blogs });
   } catch (e) {
     console.log("server", e);
     return NextResponse.json({ message: e });
