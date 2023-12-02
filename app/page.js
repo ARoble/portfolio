@@ -33,8 +33,7 @@ async function fetchBlogs() {
 }
 
 export default async function Home() {
-  const { blogs } = [];
-  // const { blogs } = await fetchBlogs();
+  const { blogs } = await fetchBlogs();
 
   return (
     <div className="py-5">

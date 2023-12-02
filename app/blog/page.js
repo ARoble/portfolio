@@ -15,13 +15,10 @@ async function fetchBlogs() {
     return blogs.json();
   } catch (e) {
     console.log("Error parsing data:", e);
-    console.log(process.env.BASE_URL);
   }
 }
 
 export default async function Blog() {
-  // const { blogs } = [];
-
   const { blogs } = await fetchBlogs();
   return (
     <div className=" items-center py-7">

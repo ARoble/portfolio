@@ -14,7 +14,6 @@ export async function getAllBlogs() {
     return data.json();
   } catch (e) {
     console.log(e);
-    console.log(process.env.BASE_URL);
   }
 }
 
