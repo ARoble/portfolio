@@ -1,4 +1,5 @@
 import { NextResponse, NextRequest } from "next/server";
+export const dynamic = "force-dynamic";
 const contentful = require("contentful");
 
 const client = contentful.createClient({
