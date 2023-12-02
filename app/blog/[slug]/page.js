@@ -18,10 +18,6 @@ async function getOneBlog({ slug }) {
   });
 
   if (!data.ok) {
-    console.log(data);
-    console.log(process.env.CONTENTFUL_SPACE_ID);
-    console.log(process.env.CONTENTFUL_ACCESS_KEY);
-    console.log(process.env.BASE_URL);
     throw new Error("Failed to fetch data");
   }
   return data.json();
@@ -76,11 +72,12 @@ export default async function Single({ params }) {
       ),
       "embedded-asset-block": (node) => (
         <Image
-          className="rounded my-3"
+          className="rounded my-3 transition-opacity opacity-0 duration-[2s]"
           height={node.data.target.fields.file.details.image.height}
           width={node.data.target.fields.file.details.image.width}
           alt="Blog image"
           src={`http:${node.data.target.fields.file.url}`}
+          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
         />
       ),
       "embedded-entry-inline": (node) => (
