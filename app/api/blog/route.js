@@ -9,7 +9,7 @@ const client = contentful.createClient({
 export async function GET(req) {
   try {
     // const searchParams = req.nextUrl.searchParams;
-    // const slug = searchParams.get("slug");
+    const slug = searchParams.get("slug");
     // const limit = searchParams.get("limit");
 
     // const response = await client.getEntries({
@@ -22,7 +22,10 @@ export async function GET(req) {
     // });
     // if (blogs.length === 1 && slug != null) blogs = blogs[0];
 
-    const response = await client.getEntries({});
+    const response = await client.getEntries({
+      content_type: "blog",
+      "fields.slug": slug,
+    });
 
     return NextResponse.json({ response });
   } catch (e) {
