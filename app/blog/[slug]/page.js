@@ -72,12 +72,11 @@ export default async function Single({ params }) {
       ),
       "embedded-asset-block": (node) => (
         <Image
-          className="rounded my-3 transition-opacity opacity-0 duration-[2s]"
+          className="rounded my-3 "
           height={node.data.target.fields.file.details.image.height}
           width={node.data.target.fields.file.details.image.width}
           alt="Blog image"
           src={`http:${node.data.target.fields.file.url}`}
-          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
         />
       ),
       "embedded-entry-inline": (node) => (
