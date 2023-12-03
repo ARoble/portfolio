@@ -9,19 +9,19 @@ const client = contentful.createClient({
 
 export async function GET(req) {
   try {
-    const searchParams = req.nextUrl.searchParams;
-    const slug = searchParams.get("slug");
+    // const searchParams = req.nextUrl.searchParams;
+    // const slug = searchParams.get("slug");
 
-    const response = await client.getEntries({
-      content_type: "projects",
-      "fields.slug": slug,
-    });
+    // const response = await client.getEntries({
+    //   content_type: "projects",
+    //   "fields.slug": slug,
+    // });
 
-    let projects = response.items.map((project) => {
-      return project.fields;
-    });
-    if (projects.length === 1 && slug != null) projects = projects[0];
-
+    // let projects = response.items.map((project) => {
+    //   return project.fields;
+    // });
+    // if (projects.length === 1 && slug != null) projects = projects[0];
+    const projects = [];
     return NextResponse.json({ projects });
   } catch (e) {
     console.log("server", e);
