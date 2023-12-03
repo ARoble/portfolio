@@ -110,13 +110,12 @@ export default async function Single({ params }) {
   }
   return (
     <div className=" py-7">
-      {projects}
       <h2 className="text-2xl font-bold">{projects?.title}</h2>
       <div className="py-3 ">
         <div className="flex space-x-1 ">
-          {/* {projects?.techStack.map((tech, index) => (
+          {projects?.techStack.map((tech, index) => (
             <TechStack tech={tech} key={index} />
-          ))} */}
+          ))}
         </div>
       </div>
 
