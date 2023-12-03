@@ -2,7 +2,8 @@ import Image from "next/image";
 import { documentToReactComponents as renderRichText } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import TechStack from "../../Components/TechStack";
-
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 export async function generateMetadata({ params }) {
   // read route params
   const slug = params.slug;

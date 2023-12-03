@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "./Components/Header";
 import Theme from "./Theme";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/ar.ico" sizes="any" />
       </head>
-      <body className="bg-background text-foreground">
+      <body className={`bg-background text-foreground ${inter.className}`}>
         <Theme>
           <div className="px-10 md:px-0 md:w-[60%] lg:w-[50%] xl:w-[35%] mx-auto">
             <Header />
