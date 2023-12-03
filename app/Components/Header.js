@@ -30,7 +30,7 @@ export default function Header() {
         </Link>
         <Link
           href="/projects"
-          className={pathname == "/projects/:slug" ? "active" : ""}
+          className={pathname == "/projects" ? "active" : ""}
         >
           Projects
         </Link>
