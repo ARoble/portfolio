@@ -26,6 +26,7 @@ module.exports = {
       button: "var(--button)",
       blueish: "var(--input)",
       orange: "#c4933b",
+      active: "var(--active)",
     },
   },
   plugins: [],

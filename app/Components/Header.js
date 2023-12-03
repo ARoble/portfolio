@@ -4,9 +4,11 @@ import { FiSun } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
   return (
     <div className="flex justify-between items-center py-7">
       <Link href="/">
@@ -18,10 +20,20 @@ export default function Header() {
           className="h-10 rounded-md shadow-lg"
         />
       </Link>
+
       <div className="space-x-3 text-gray">
-        <Link href="/about">About</Link>
-        <Link href="/blog">Blog</Link>
-        <Link href="/projects">Projects</Link>
+        <Link href="/about" className={pathname == "/about" ? "active" : ""}>
+          About
+        </Link>
+        <Link href="/blog" className={pathname == "/blog" ? "active" : ""}>
+          Blog
+        </Link>
+        <Link
+          href="/projects"
+          className={pathname == "/projects/:slug" ? "active" : ""}
+        >
+          Projects
+        </Link>
         {/* <a>Contact</a> */}
       </div>
 

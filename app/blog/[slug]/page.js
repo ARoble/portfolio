@@ -1,5 +1,4 @@
 import Subscribe from "@/app/Components/Subscribe";
-// import { getOneBlog } from "@/app/lib/blog";
 import dateFormat from "dateformat";
 import { documentToReactComponents as renderRichText } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
