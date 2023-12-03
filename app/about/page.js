@@ -115,7 +115,7 @@ export default function About() {
             <Link
               href="https://twitter.com/_arooble"
               target="_blank"
-              className="border rounded-md border-dark py-3 px-4 flex items-center justify-between hover:cursor-pointer hover:text-gray"
+              className="border rounded-md border-dark py-3 px-4 flex items-center justify-between hover:cursor-pointer hover:text-hover"
             >
               <div className="flex items-center">
                 <AiOutlineTwitter size={23} />
@@ -126,7 +126,7 @@ export default function About() {
             <Link
               href="https://github.com/ARoble"
               target="_blank"
-              className="border rounded-md border-dark py-3 px-4 flex items-center justify-between hover:cursor-pointer hover:text-gray"
+              className="border rounded-md border-dark py-3 px-4 flex items-center justify-between hover:cursor-pointer hover:text-hover"
             >
               <div className="flex items-center">
                 <AiOutlineGithub size={23} />
@@ -138,7 +138,7 @@ export default function About() {
             <Link
               href="https://www.linkedin.com/in/abdulladif-roble-892681118/"
               target="_blank"
-              className="border rounded-md border-dark py-3 px-4 flex items-center justify-between hover:cursor-pointer hover:text-gray"
+              className="border rounded-md border-dark py-3 px-4 flex items-center justify-between hover:cursor-pointer hover:text-hover"
             >
               <div className="flex items-center">
                 <AiFillLinkedin size={23} />
@@ -164,7 +164,7 @@ export default function About() {
               <Link
                 href="https://www.fikrcamp.com"
                 target="_blank"
-                className="flex justify-between hover:text-gray hover:cursor-pointer"
+                className="flex justify-between hover:text-hover hover:cursor-pointer"
               >
                 <div className="flex items-center space-x-2">
                   <Image
@@ -186,7 +186,7 @@ export default function About() {
               <Link
                 href="https://www.dalbofood.com"
                 target="_blank"
-                className="flex justify-between hover:text-gray hover:cursor-pointer"
+                className="flex justify-between hover:text-hover hover:cursor-pointer"
               >
                 <div className="flex items-center space-x-2">
                   <Image

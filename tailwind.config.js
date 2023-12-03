@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,12 +15,16 @@ module.exports = {
       },
     },
     colors: {
+      background: "var(--background)",
+      foreground: "var(--foreground)",
       white: "#FFFFFF",
       black: "#000000",
-      gray: "#b4b4b4",
+      gray: "var(--gray)", //text
       dark: "#515151",
-      darkGray: "#262626",
-      blueish: "#2b2a33",
+      darkGray: "var(--darkGray)",
+      hover: "var(--hover)",
+      button: "var(--button)",
+      blueish: "var(--input)",
       orange: "#c4933b",
     },
   },

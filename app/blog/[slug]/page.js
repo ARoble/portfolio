@@ -108,7 +108,7 @@ export default async function Single({ params }) {
         {blogs?.blogType.map((type, index) => (
           <h1
             key={index}
-            className="bg-dark w-fit px-2.5 py-1.5 text-xs rounded"
+            className="bg-darkGray w-fit px-2.5 py-1.5 text-xs rounded"
           >
             {type}
           </h1>

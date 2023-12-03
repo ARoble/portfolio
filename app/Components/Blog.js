@@ -7,7 +7,7 @@ export default function Blog({ blog }) {
       <div className="text-gray">
         {dateFormat(blog.published, "mmm dd, yyyy")}
       </div>
-      <div className="col-span-3 hover:text-gray hover:cursor-pointer">
+      <div className="col-span-3 hover:text-hover hover:cursor-pointer">
         {blog.title}
       </div>
     </Link>

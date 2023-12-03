@@ -12,7 +12,7 @@ export default function Intro() {
       <h2 className="text-sm text-gray">
         Im a full-stack developer and an{" "}
         <u
-          className="hover:text-white hover:cursor-pointer"
+          className="hover:text-hover hover:cursor-pointer"
           onMouseOver={() => setGif(!gif)}
           onMouseOut={() => setGif(!gif)}
         >

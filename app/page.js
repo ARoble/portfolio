@@ -52,7 +52,7 @@ export default async function Home() {
           <Link
             href="https://twitter.com/_arooble"
             target="_blank"
-            className="flex items-center space-x-1 hover:cursor-pointer hover:text-gray"
+            className="flex items-center space-x-1 hover:cursor-pointer hover:text-hover"
           >
             <h2>
               <AiOutlineTwitter size="20" />
@@ -62,7 +62,7 @@ export default async function Home() {
           <Link
             href="https://github.com/ARoble"
             target="_blank"
-            className="flex items-center space-x-1 hover:cursor-pointer hover:text-gray"
+            className="flex items-center space-x-1 hover:cursor-pointer hover:text-hover"
           >
             <h2>
               <AiOutlineGithub size="20" />
@@ -72,7 +72,7 @@ export default async function Home() {
           <Link
             href="https://www.linkedin.com/in/abdulladif-roble-892681118/"
             target="_blank"
-            className="flex items-center space-x-1 hover:cursor-pointer hover:text-gray"
+            className="flex items-center space-x-1 hover:cursor-pointer hover:text-hover"
           >
             <h2>
               <AiFillLinkedin size="20" />
@@ -88,7 +88,7 @@ export default async function Home() {
         </div>
       </div>
       <div className="mr-20 py-5">
-        <p className="text-[#eeeeee]">
+        <p className="">
           Hey there 👋🏾, Im Roble I'm a full-stack developer who gets a kick out
           of problem-solving, both in code and on the football field. When I'm
           not wrestling with bugs, you can find me chasing a ball.
@@ -101,7 +101,7 @@ export default async function Home() {
           {technologies.map((technology, index) => (
             <div
               key={index}
-              className="flex items-center space-x-1 border border-dark py-1 px-1.5  rounded-sm bg-darkGray "
+              className="flex items-center space-x-1  py-1.5 px-2  rounded-sm bg-darkGray hover:cursor-pointer"
             >
               <Image
                 src={technology.image}
@@ -123,7 +123,7 @@ export default async function Home() {
 
         <Link
           href="/blog"
-          className="text-gray underline hover:text-white hover:cursor-pointer"
+          className="text-gray underline hover:text-hover hover:cursor-pointer"
         >
           See all
         </Link>

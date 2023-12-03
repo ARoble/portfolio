@@ -5,8 +5,18 @@ export const metadata = {
   title: "Projects | Roble",
   description: "...",
 };
-
-export default function Page() {
+async function fetchProjects() {
+  try {
+    const blogs = await fetch(`${process.env.BASE_URL}/projects`, {
+      cache: "no-store",
+    });
+    return blogs.json();
+  } catch (e) {
+    console.log("Error parsing data:", e);
+  }
+}
+export default async function Page() {
+  const { projects } = await fetchProjects();
   return (
     <div className=" items-center py-7">
       <div>
@@ -16,9 +26,9 @@ export default function Page() {
         </h2>
       </div>
       <div className="py-10 space-y-8">
-        <Projects />
-        <Projects />
-        <Projects />
+        {projects.map((project, index) => (
+          <Projects project={project} key={index} />
+        ))}
       </div>
     </div>
   );
