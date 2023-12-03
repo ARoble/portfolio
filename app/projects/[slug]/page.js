@@ -29,8 +29,8 @@ async function fetchProjects({ slug }) {
 }
 
 export default async function Single({ params }) {
-  // const { projects } = await fetchProjects(params);
-  const { projects } = [];
+  const { projects } = await fetchProjects(params);
+
   const Text = ({ children }) => (
     <p className="">
       {children}
