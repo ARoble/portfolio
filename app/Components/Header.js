@@ -37,7 +37,11 @@ export default function Header() {
         {/* <a>Contact</a> */}
       </div>
 
-      <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+      <button
+        onClick={() =>
+          setTheme(theme === "dark" || theme === "system" ? "light" : "dark")
+        }
+      >
         {theme === "dark" ? <FiSun size={20} /> : <BsMoonFill />}
       </button>
     </div>

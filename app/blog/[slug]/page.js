@@ -5,6 +5,7 @@ import Image from "next/image";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   title: "Blog | Roble",
@@ -96,7 +97,9 @@ export default async function Single({ params }) {
       ),
     },
   };
-
+  if (blogs.length === 0) {
+    return notFound();
+  }
   return (
     <div className=" py-7">
       <h2 className="text-2xl font-bold">{blogs?.title}</h2>

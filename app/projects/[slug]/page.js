@@ -4,6 +4,8 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import TechStack from "../../Components/TechStack";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { notFound } from "next/navigation";
+
 export async function generateMetadata({ params }) {
   // read route params
   const slug = params.slug;
@@ -22,6 +24,7 @@ async function fetchProjects({ slug }) {
         cache: "no-store",
       }
     );
+
     return projects.json();
   } catch (e) {
     console.log("Error parsing data:", e);
@@ -101,14 +104,19 @@ export default async function Single({ params }) {
       ),
     },
   };
+
+  if (projects.length === 0) {
+    return notFound();
+  }
   return (
     <div className=" py-7">
+      {projects}
       <h2 className="text-2xl font-bold">{projects?.title}</h2>
       <div className="py-3 ">
         <div className="flex space-x-1 ">
-          {projects?.techStack.map((tech, index) => (
+          {/* {projects?.techStack.map((tech, index) => (
             <TechStack tech={tech} key={index} />
-          ))}
+          ))} */}
         </div>
       </div>
 
