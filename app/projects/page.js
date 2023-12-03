@@ -16,7 +16,8 @@ async function fetchProjects() {
   }
 }
 export default async function Page() {
-  const { projects } = await fetchProjects();
+  // const { projects } = await fetchProjects();
+  const { projects } = [];
   return (
     <div className=" items-center py-7">
       <div>
