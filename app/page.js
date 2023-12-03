@@ -87,7 +87,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="mr-20 py-5">
+      <div className="md:mr-20 py-5">
         <p className="">
           Hey there 👋🏾, Im Roble I'm a full-stack developer who gets a kick out
           of problem-solving, both in code and on the football field. When I'm

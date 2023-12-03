@@ -21,7 +21,7 @@ export default function About() {
       </div>
       {/* IMAGES */}
       <div className="py-10">
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
           <div className="row-span-2">
             <Image
               src="/hawasa.JPEG"
@@ -44,7 +44,7 @@ export default function About() {
               alt="Bootcamp graduation pic"
             />
           </div>
-          <div className="">
+          <div className="hidden md:block">
             <Image
               src="/grad2.JPEG"
               className="rounded-md shadow-md h-full object-cover"
@@ -66,7 +66,7 @@ export default function About() {
               alt="coding session pic"
             />
           </div>
-          <div>
+          <div className="hidden md:block">
             <Image
               src="/workshop.JPG"
               className="rounded-md shadow-md h-full object-cover"
@@ -83,7 +83,7 @@ export default function About() {
 
       {/* ABOUT */}
       <div className="py-5">
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-2 space-y-2 md:grid-cols-4">
           <div className="text-gray">About</div>
           <div className="col-span-3 ">
             I'm a passionate full stack developer with a strong knack for
@@ -102,16 +102,21 @@ export default function About() {
       {/* ABOUT */}
       {/* CONTACT */}
       <div className="py-5">
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-2 space-y-2 md:grid-cols-4">
           <div className="text-gray">Contact</div>
           <div className="col-span-3 grid grid-cols-2 gap-2">
-            <div className="border rounded-md border-dark py-3 px-4 flex items-center justify-between">
+            <Link
+              href="mailto:abdulladif0042@gmail.com"
+              target="_blank"
+              className="border rounded-md border-dark py-3 px-4 flex items-center justify-between hover:cursor-pointer hover:text-hover"
+            >
               <div className="flex items-center">
                 <AiOutlineMail size={23} />
                 <h4 className="pl-1">Email</h4>
               </div>
               <RxArrowTopRight />
-            </div>
+            </Link>
+
             <Link
               href="https://twitter.com/_arooble"
               target="_blank"
@@ -152,7 +157,7 @@ export default function About() {
       {/* CONTACT */}
       {/* ABOUT */}
       <div className="py-5">
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-2 space-y-2 md:grid-cols-4">
           <div className="text-gray">Work</div>
           <div className="col-span-3 ">
             <p>

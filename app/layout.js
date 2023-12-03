@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`bg-background text-foreground ${inter.className}`}>
         <Theme>
-          <div className="px-10 md:px-0 md:w-[60%] lg:w-[50%] xl:w-[35%] mx-auto">
+          <div className="px-4 md:px-0 md:w-[70%] lg:w-[55%] xl:w-[35%] mx-auto">
             <Header />
             {children}
           </div>
