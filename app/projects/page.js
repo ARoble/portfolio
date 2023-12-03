@@ -27,7 +27,7 @@ export default async function Page() {
         </h2>
       </div>
       <div className="py-10 space-y-8">
-        {projects.map((project, index) => (
+        {projects?.map((project, index) => (
           <Projects project={project} key={index} />
         ))}
       </div>
