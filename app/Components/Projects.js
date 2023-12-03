@@ -10,7 +10,6 @@ export default function Projects({ project }) {
       >
         <div>
           <Image
-            src="/ecommerece.png"
             src={`http:${project.image.fields.file.url}`}
             width={400}
             height={200}
