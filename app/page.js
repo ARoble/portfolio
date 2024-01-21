@@ -115,6 +115,17 @@ export default async function Home() {
         </div>
       </div>
       {/* TECHNOLOGIES  */}
+      {/* CURRENTLY LEARNING  */}
+      <div className="py-2">
+        <h3 className="text-gray">Currently learning:</h3>
+        <div className="flex flex-wrap gap-1 mt-4">
+          <div className="flex items-center space-x-1  py-1.5 px-2  rounded-sm bg-darkGray hover:cursor-pointer">
+            <Image src="/aws.png" height="16" width="16" alt="AWS services" />
+            <h2 className="text-xs">AWS</h2>
+          </div>
+        </div>
+      </div>
+      {/* CURRENTLY LEARNING  */}
       {/* BLOG SECTION */}
       <div className="py-5">
         <h3 className="text-gray">Latests posts</h3>

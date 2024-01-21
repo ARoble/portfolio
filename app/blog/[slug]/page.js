@@ -71,13 +71,18 @@ export default async function Single({ params }) {
         </ol>
       ),
       "embedded-asset-block": (node) => (
-        <Image
-          className="rounded my-3 "
-          height={node.data.target.fields.file.details.image.height}
-          width={node.data.target.fields.file.details.image.width}
-          alt="Blog image"
-          src={`http:${node.data.target.fields.file.url}`}
-        />
+        <div>
+          <Image
+            className="rounded my-3 "
+            height={node.data.target.fields.file.details.image.height}
+            width={node.data.target.fields.file.details.image.width}
+            alt="Blog image"
+            src={`http:${node.data.target.fields.file.url}`}
+          />
+          <h2 className="text-center text-sm text-gray mb-2 px-10">
+            {node.data.target.fields.description}
+          </h2>
+        </div>
       ),
       "embedded-entry-inline": (node) => (
         <>

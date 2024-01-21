@@ -8,6 +8,8 @@ const technologies = [
   { name: "Next Js", image: "/next.png", height: 16, width: 16 },
   { name: "MongoDB", image: "/mongo.png", height: 16, width: 16 },
   { name: "Tailwind CSS", image: "/tailwind.png", height: 13, width: 18 },
+  { name: "S3", image: "/s3.png", height: 13, width: 18 },
+  { name: "Zustland", image: "/zustland.png", height: 30, width: 30 },
 ];
 
 function getStackImage(tech) {
@@ -19,7 +21,7 @@ function getStackImage(tech) {
 }
 export default function TechStack({ tech }) {
   return (
-    <div className="flex items-center space-x-1 py-1.5 px-2 rounded-sm bg-darkGray ">
+    <div className="flex items-center  py-1.5 px-2 w-fit rounded-sm bg-darkGray  ">
       <Image
         src={getStackImage(tech).image}
         height={getStackImage(tech).height}
@@ -27,7 +29,7 @@ export default function TechStack({ tech }) {
         alt={getStackImage(tech).name}
       />
 
-      <h2 className="text-xs">{tech}</h2>
+      <h2 className="text-xs ml-1">{tech}</h2>
     </div>
   );
 }

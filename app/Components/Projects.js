@@ -14,17 +14,17 @@ export default function Projects({ project }) {
             width={400}
             height={200}
             alt="project image"
-            className="rounded"
+            className="rounded md:max-h-[130px] lg:max-h-[180px] object-cover object-top"
           />
         </div>
-        <div className="flex flex-col justify-center r">
+        <div className="flex flex-col justify-start ">
           <h3>{project.title}</h3>
           <p className="text-gray py-2 text-sm">{project.shortDescription}</p>
-          <div className="flex space-x-1">
+          {/* <div className="flex flex-wrap  gap-1 bg-white ">
             {project.techStack.map((tech, index) => (
               <TechStack tech={tech} key={index} />
             ))}
-          </div>
+          </div> */}
         </div>
       </Link>
     </div>

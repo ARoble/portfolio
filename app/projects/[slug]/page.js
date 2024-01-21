@@ -5,7 +5,7 @@ import TechStack from "../../Components/TechStack";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { notFound } from "next/navigation";
-
+import { GoArrowUpRight } from "react-icons/go";
 export async function generateMetadata({ params }) {
   // read route params
   const slug = params.slug;
@@ -78,13 +78,18 @@ export default async function Single({ params }) {
         </ol>
       ),
       "embedded-asset-block": (node) => (
-        <Image
-          className="rounded my-3 "
-          height={node.data.target.fields.file.details.image.height}
-          width={node.data.target.fields.file.details.image.width}
-          alt="Blog image"
-          src={`http:${node.data.target.fields.file.url}`}
-        />
+        <div>
+          <Image
+            className="rounded my-2"
+            height={node.data.target.fields.file.details.image.height}
+            width={node.data.target.fields.file.details.image.width}
+            alt="Blog image"
+            src={`http:${node.data.target.fields.file.url}`}
+          />
+          <h2 className="text-center text-sm text-gray mt-0 pt-0 px-10">
+            {node.data.target.fields.description}
+          </h2>
+        </div>
       ),
       "embedded-entry-inline": (node) => (
         <>
@@ -118,7 +123,16 @@ export default async function Single({ params }) {
           ))}
         </div>
       </div>
-
+      <div className="flex items-center ">
+        <a
+          href={projects?.projectLink}
+          target="__blank"
+          className=" text-[15px]  underline-offset-4 underline hover:text-gray hover:cursor-pointer"
+        >
+          Visit App
+        </a>
+        <GoArrowUpRight size={17} />
+      </div>
       <div className="py-10">{renderRichText(projects?.content, options)}</div>
     </div>
   );
