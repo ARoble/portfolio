@@ -4,7 +4,7 @@ import { documentToReactComponents as renderRichText } from "@contentful/rich-te
 import Image from "next/image";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { notFound } from "next/navigation";
 
 export const metadata = {
@@ -51,6 +51,12 @@ export default async function Single({ params }) {
       [BLOCKS.HEADING_5]: (node, children) => <h5>{children}</h5>,
       [BLOCKS.HEADING_6]: (node, children) => <h6>{children}</h6>,
       [BLOCKS.HR]: (node, children) => <hr className="py-3" />,
+      [INLINES.HYPERLINK]: ({ data }, children) => (
+        <a href={data.uri} target="__blank" className="underline font-semibold">
+          {children}
+        </a>
+      ),
+
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.UL_LIST]: (node, children) => (
         <ul className="ml-10 pb-4">
