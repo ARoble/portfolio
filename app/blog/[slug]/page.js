@@ -128,7 +128,7 @@ export default async function Single({ params }) {
         ))}
       </div>
       <div className="py-5">{renderRichText(blogs?.content, options)}</div>
-      <Subscribe />
+      {/* <Subscribe /> */}
     </div>
   );
 }

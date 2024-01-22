@@ -31,7 +31,7 @@ export default async function Blog() {
       </div>
       {/* BLOG */}
       {/* SUBSCRIBE */}
-      <Subscribe />
+      {/* <Subscribe /> */}
       {/* SUBSCRIBE */}
     </div>
   );
