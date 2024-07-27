@@ -111,11 +111,12 @@ export default async function Single({ params }) {
   if (blogs.length === 0) {
     return notFound();
   }
+
   return (
     <div className=" py-7">
       <h2 className="text-2xl font-bold">{blogs?.title}</h2>
       <h4 className="text-gray">
-        {dateFormat(blogs?.published, "mmm dd, yyyy")} (12 days ago)
+        {dateFormat(blogs?.published, "mmm dd, yyyy")}
       </h4>
       <div className="pt-2">
         {blogs?.blogType.map((type, index) => (

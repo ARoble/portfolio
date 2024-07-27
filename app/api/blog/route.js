@@ -16,6 +16,7 @@ export async function GET(req) {
     const response = await client.getEntries({
       content_type: "blog",
       "fields.slug": slug,
+      order: "-fields.published",
     });
 
     let blogs = response.items.map((blog) => {

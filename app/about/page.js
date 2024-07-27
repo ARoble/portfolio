@@ -86,16 +86,20 @@ export default function About() {
         <div className="grid grid-cols-2 space-y-2 md:grid-cols-4">
           <div className="text-gray">About</div>
           <div className="col-span-3 ">
-            I'm a passionate full stack developer with a strong knack for
-            problem-solving. When I'm not immersed in coding, you can find me on
-            the football field, where I love to kick the ball around,
-            strategize, and enjoy the thrill of the game. <br />
+            I'm a full-stack developer who thrives on solving problems, whether
+            they're in code or the business world. With a keen eye for spotting
+            opportunities and a love for building things, I like to think of
+            myself as a problem-solver with a twist. When I'm not coding, you
+            might find me sharing my knowledge with students at Fikrcamp, an
+            online coding bootcamp I started to help others break into the tech
+            industry.
             <br />
-            Additionally, I occasionally find time to hit the gym, where I
-            challenge myself to lift weights and work on my physical strength.
-            Combining my love for technology with my enthusiasm for sports and
-            fitness, I bring a well-rounded perspective to every project I
-            tackle. Let's build innovative solutions together!
+            <br />
+            Recently, I've been teaching more than coding, but I'm always up for
+            a new challenge. I'm currently looking for exciting opportunities .
+            If you're looking for someone who can tackle tough problems with a
+            smile and a bit of flair, let's connect and create something amazing
+            together!
           </div>
         </div>
       </div>
@@ -160,10 +164,7 @@ export default function About() {
         <div className="grid grid-cols-2 space-y-2 md:grid-cols-4">
           <div className="text-gray">Work</div>
           <div className="col-span-3 ">
-            <p>
-              I'm a passionate full stack developer with a strong knack for
-              problem-solving. When I'm not immersed in coding, you can find
-            </p>
+            <p>My past work experiences in the feild are listed down below.</p>
             <div className="py-5 space-y-5">
               {/* JOB */}
               <Link
@@ -185,6 +186,28 @@ export default function About() {
                   </div>
                 </div>
                 <h4 className="text-gray">2021 - </h4>
+              </Link>
+              {/* JOB */}
+              {/* JOB */}
+              <Link
+                href="https://www.fikrcamp.com"
+                target="_blank"
+                className="flex justify-between hover:text-hover hover:cursor-pointer"
+              >
+                <div className="flex items-center space-x-2">
+                  <Image
+                    src="/ar.png"
+                    className="h-14 rounded-full"
+                    height={56}
+                    width={56}
+                    alt="fikrcamp"
+                  />
+                  <div>
+                    <h3>Freelancing</h3>
+                    <h4 className="text-gray">Full-stack developer</h4>
+                  </div>
+                </div>
+                <h4 className="text-gray">2018 - </h4>
               </Link>
               {/* JOB */}
               {/* JOB */}

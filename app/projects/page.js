@@ -26,7 +26,7 @@ export default async function Page() {
           List of projects i have been working on
         </h2>
       </div>
-      <div className="py-10 space-y-8">
+      <div className="py-10 space-y-6">
         {projects?.map((project, index) => (
           <Projects project={project} key={index} />
         ))}

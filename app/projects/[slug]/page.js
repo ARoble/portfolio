@@ -54,7 +54,9 @@ export default async function Single({ params }) {
       [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>,
       [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
       [BLOCKS.HEADING_3]: (node, children) => <h3>{children}</h3>,
-      [BLOCKS.HEADING_4]: (node, children) => <h4>{children}</h4>,
+      [BLOCKS.HEADING_4]: (node, children) => (
+        <h4 className="text-xl font-bold mt-2 mb-0.5">{children}</h4>
+      ),
       [BLOCKS.HEADING_5]: (node, children) => <h5>{children}</h5>,
       [BLOCKS.HEADING_6]: (node, children) => <h6>{children}</h6>,
       [BLOCKS.HR]: (node, children) => <hr className="py-3" />,

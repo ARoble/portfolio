@@ -6,7 +6,7 @@ export default function Projects({ project }) {
     <div>
       <Link
         href={`/projects/${project.slug}`}
-        className="grid md:grid-cols-2 gap-5 hover:cursor-pointer "
+        className="grid md:grid-cols-2 gap-4 hover:cursor-pointer "
       >
         <div>
           <Image
@@ -14,7 +14,7 @@ export default function Projects({ project }) {
             width={400}
             height={200}
             alt="project image"
-            className="rounded md:max-h-[130px] lg:max-h-[180px] object-cover object-top"
+            className="rounded md:h-[130px] lg:h-[140px] object-cover object-top"
           />
         </div>
         <div className="flex flex-col justify-start ">
