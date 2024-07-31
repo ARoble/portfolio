@@ -167,11 +167,43 @@ export default function About() {
             <p>My past work experiences in the feild are listed down below.</p>
             <div className="py-5 space-y-5">
               {/* JOB */}
-              <Link
-                href="https://www.fikrcamp.com"
-                target="_blank"
-                className="flex justify-between hover:text-hover hover:cursor-pointer"
-              >
+              <div className="flex justify-between hover:text-hover hover:cursor-pointer">
+                <div className="flex items-center space-x-2">
+                  <Image
+                    src="/ardipay.jpg"
+                    className="h-14 rounded-full"
+                    height={56}
+                    width={56}
+                    alt="fikrcamp"
+                  />
+                  <div>
+                    <h3>ArdiPay</h3>
+                    <h4 className="text-gray">Full stack developer</h4>
+                  </div>
+                </div>
+                <h4 className="text-gray">April 24 - </h4>
+              </div>
+              {/* JOB */}
+              {/* JOB */}
+              <div className="flex justify-between hover:text-hover hover:cursor-pointer">
+                <div className="flex items-center space-x-2">
+                  <Image
+                    src="/moiid.jpg"
+                    className="h-14 rounded-full"
+                    height={56}
+                    width={56}
+                    alt="moiid"
+                  />
+                  <div>
+                    <h3>MOIID</h3>
+                    <h4 className="text-gray">Full stack developer</h4>
+                  </div>
+                </div>
+                <h4 className="text-gray">Oct 23 - May 24</h4>
+              </div>
+              {/* JOB */}
+              {/* JOB */}
+              <div className="flex justify-between hover:text-hover hover:cursor-pointer">
                 <div className="flex items-center space-x-2">
                   <Image
                     src="/fikrcamplogo.png"
@@ -182,40 +214,35 @@ export default function About() {
                   />
                   <div>
                     <h3>Fikrcamp</h3>
-                    <h4 className="text-gray">Lead Instructor</h4>
+                    <h4 className="text-gray">Coding Instructor</h4>
                   </div>
                 </div>
-                <h4 className="text-gray">2021 - </h4>
-              </Link>
+                <h4 className="text-gray">Feb 21 - Oct 23</h4>
+              </div>
               {/* JOB */}
               {/* JOB */}
-              <Link
-                href="https://www.fikrcamp.com"
-                target="_blank"
+              <div
+                href="#"
                 className="flex justify-between hover:text-hover hover:cursor-pointer"
               >
                 <div className="flex items-center space-x-2">
                   <Image
-                    src="/ar.png"
+                    src="/ssg.jpeg"
                     className="h-14 rounded-full"
                     height={56}
                     width={56}
                     alt="fikrcamp"
                   />
                   <div>
-                    <h3>Freelancing</h3>
-                    <h4 className="text-gray">Full-stack developer</h4>
+                    <h3>SSG</h3>
+                    <h4 className="text-gray">Web developer</h4>
                   </div>
                 </div>
-                <h4 className="text-gray">2018 - </h4>
-              </Link>
+                <h4 className="text-gray">Oct 19 - Feb 21</h4>
+              </div>
               {/* JOB */}
               {/* JOB */}
-              <Link
-                href="https://www.dalbofood.com"
-                target="_blank"
-                className="flex justify-between hover:text-hover hover:cursor-pointer"
-              >
+              <div className="flex justify-between hover:text-hover hover:cursor-pointer">
                 <div className="flex items-center space-x-2">
                   <Image
                     src="/dalbofood.jpg"
@@ -229,8 +256,8 @@ export default function About() {
                     <h4 className="text-gray">Web developer</h4>
                   </div>
                 </div>
-                <h4 className="text-gray">2017 - 2018</h4>
-              </Link>
+                <h4 className="text-gray">Feb 18 - Oct 19</h4>
+              </div>
               {/* JOB */}
             </div>
           </div>

@@ -70,7 +70,7 @@ export default async function Home() {
             <p className="text-xs">@ARoble</p>
           </Link>
           <Link
-            href="https://www.linkedin.com/in/abdulladif-roble-892681118/"
+            href="https://linkedin.com/in/a-roble"
             target="_blank"
             className="flex items-center space-x-1 hover:cursor-pointer hover:text-hover"
           >
