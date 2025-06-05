@@ -170,7 +170,7 @@ export default function About() {
               <div className="flex justify-between hover:text-hover hover:cursor-pointer">
                 <div className="flex items-center space-x-2">
                   <Image
-                    src="/ardipay.jpg"
+                    src="/ardipay.png"
                     className="h-14 rounded-full"
                     height={56}
                     width={56}
@@ -185,7 +185,7 @@ export default function About() {
               </div>
               {/* JOB */}
               {/* JOB */}
-              <div className="flex justify-between hover:text-hover hover:cursor-pointer">
+              {/* <div className="flex justify-between hover:text-hover hover:cursor-pointer">
                 <div className="flex items-center space-x-2">
                   <Image
                     src="/moiid.jpg"
@@ -200,7 +200,7 @@ export default function About() {
                   </div>
                 </div>
                 <h4 className="text-gray">Oct 23 - May 24</h4>
-              </div>
+              </div> */}
               {/* JOB */}
               {/* JOB */}
               <div className="flex justify-between hover:text-hover hover:cursor-pointer">
@@ -214,10 +214,10 @@ export default function About() {
                   />
                   <div>
                     <h3>Fikrcamp</h3>
-                    <h4 className="text-gray">Coding Instructor</h4>
+                    <h4 className="text-gray">Coding Mentor</h4>
                   </div>
                 </div>
-                <h4 className="text-gray">Feb 21 - Oct 23</h4>
+                <h4 className="text-gray">Feb 22 - Jan 24</h4>
               </div>
               {/* JOB */}
               {/* JOB */}
@@ -238,11 +238,11 @@ export default function About() {
                     <h4 className="text-gray">Web developer</h4>
                   </div>
                 </div>
-                <h4 className="text-gray">Oct 19 - Feb 21</h4>
+                <h4 className="text-gray">Oct 21 - Feb 22</h4>
               </div>
               {/* JOB */}
               {/* JOB */}
-              <div className="flex justify-between hover:text-hover hover:cursor-pointer">
+              {/* <div className="flex justify-between hover:text-hover hover:cursor-pointer">
                 <div className="flex items-center space-x-2">
                   <Image
                     src="/dalbofood.jpg"
@@ -257,7 +257,7 @@ export default function About() {
                   </div>
                 </div>
                 <h4 className="text-gray">Feb 18 - Oct 19</h4>
-              </div>
+              </div> */}
               {/* JOB */}
             </div>
           </div>
