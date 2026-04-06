@@ -1,0 +1,27 @@
+import Link from "next/link";
+// import Projects from "../Components/Projects";
+
+export const metadata = {
+  title: "Projects | Roble",
+  description: "...",
+};
+
+export default async function Projects() {
+  
+
+  return (
+    <div className=" items-center py-7">
+      <div>
+        <h2 className="text-2xl font-bold">Projects</h2>
+        <h2 className="text-sm text-gray">
+          List of projects i have been working on
+        </h2>
+      </div>
+      <div className="py-10 space-y-6">
+        {/* {projects?.map((project, index) => (
+          <Projects project={project} key={index} />
+        ))} */}
+      </div>
+    </div>
+  );
+}
