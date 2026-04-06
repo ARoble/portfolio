@@ -7,12 +7,21 @@ import {
 import { RxArrowTopRight } from "react-icons/rx";
 import Link from "next/link";
 import Image from "next/image";
+import { getPayload } from 'payload'
+import config from '@payload-config'
+
 export const metadata = {
   title: "About | Roble",
   description: "...",
 };
 
-export default function About() {
+export default async function About() {
+  const payload = await getPayload({ config })
+
+  const { docs: experiences } = await payload.find({
+    collection: 'experiences',
+    sort: 'order',
+  })
   return (
     <div className=" items-center py-7">
       <div>
@@ -159,110 +168,43 @@ export default function About() {
         </div>
       </div>
       {/* CONTACT */}
-      {/* ABOUT */}
+      {/* WORK */}
       <div className="py-5">
         <div className="grid grid-cols-2 space-y-2 md:grid-cols-4">
           <div className="text-gray">Work</div>
-          <div className="col-span-3 ">
-            <p>My past work experiences in the feild are listed down below.</p>
+          <div className="col-span-3">
+            <p>My past work experiences in the field are listed down below.</p>
             <div className="py-5 space-y-5">
-              {/* JOB */}
-              <div className="flex justify-between hover:text-hover hover:cursor-pointer">
-                <div className="flex items-center space-x-2">
-                  <Image
-                    src="/images/work/ardipay.png"
-                    className="h-14 rounded-full"
-                    height={56}
-                    width={56}
-                    alt="ardipay"
-                  />
-                  <div>
-                    <h3>ArdiPay</h3>
-                    <h4 className="text-gray">Full stack developer</h4>
+              {experiences.map((exp) => (
+                <div
+                  key={exp.id}
+                  className="flex justify-between hover:text-hover hover:cursor-pointer"
+                >
+                  <div className="flex items-center space-x-2">
+                    {exp.logo && typeof exp.logo === 'object' && (
+                      <Image
+                        src={exp.logo.url || ''}
+                        className="h-14 w-14 rounded-full object-cover"
+                        height={56}
+                        width={56}
+                        alt={exp.company}
+                      />
+                    )}
+                    <div>
+                      <h3>{exp.company}</h3>
+                      <h4 className="text-gray">{exp.role}</h4>
+                    </div>
                   </div>
+                  <h4 className="text-gray">
+                    {exp.startDate} - {exp.endDate || ''}
+                  </h4>
                 </div>
-                <h4 className="text-gray">April 24 - </h4>
-              </div>
-              {/* JOB */}
-              {/* JOB */}
-              {/* <div className="flex justify-between hover:text-hover hover:cursor-pointer">
-                <div className="flex items-center space-x-2">
-                  <Image
-                    src="/moiid.jpg"
-                    className="h-14 rounded-full"
-                    height={56}
-                    width={56}
-                    alt="moiid"
-                  />
-                  <div>
-                    <h3>MOIID</h3>
-                    <h4 className="text-gray">Full stack developer</h4>
-                  </div>
-                </div>
-                <h4 className="text-gray">Oct 23 - May 24</h4>
-              </div> */}
-              {/* JOB */}
-              {/* JOB */}
-              <div className="flex justify-between hover:text-hover hover:cursor-pointer">
-                <div className="flex items-center space-x-2">
-                  <Image
-                    src="/images/work/fikrcamplogo.png"
-                    className="h-14 rounded-full"
-                    height={56}
-                    width={56}
-                    alt="fikrcamp"
-                  />
-                  <div>
-                    <h3>Fikrcamp</h3>
-                    <h4 className="text-gray">Coding Mentor</h4>
-                  </div>
-                </div>
-                <h4 className="text-gray">Feb 22 - Jan 24</h4>
-              </div>
-              {/* JOB */}
-              {/* JOB */}
-              <div
-                className="flex justify-between hover:text-hover hover:cursor-pointer"
-              >
-                <div className="flex items-center space-x-2">
-                  <Image
-                    src="/images/work/ssg.jpeg"
-                    className="h-14 rounded-full"
-                    height={56}
-                    width={56}
-                    alt="SSG"
-                  />
-                  <div>
-                    <h3>SSG</h3>
-                    <h4 className="text-gray">Web developer</h4>
-                  </div>
-                </div>
-                <h4 className="text-gray">Oct 21 - Feb 22</h4>
-              </div>
-              {/* JOB */}
-              {/* JOB */}
-              {/* <div className="flex justify-between hover:text-hover hover:cursor-pointer">
-                <div className="flex items-center space-x-2">
-                  <Image
-                    src="/images/work/dalbofood.jpg"
-                    className="h-14 rounded-full"
-                    width={56}
-                    height={56}
-                    alt="dalbofood"
-                  />
-                  <div>
-                    <h3>Dalbofood</h3>
-                    <h4 className="text-gray">Web developer</h4>
-                  </div>
-                </div>
-                <h4 className="text-gray">Feb 18 - Oct 19</h4>
-              </div> */}
-              {/* JOB */}
+              ))}
             </div>
           </div>
         </div>
       </div>
-      {/* ABOUT */}
+      {/* WORK */}
     </div>
   );
 }

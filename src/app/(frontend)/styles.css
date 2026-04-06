@@ -68,7 +68,7 @@ img {
   display: block;
 }
 
-h1 {
+h1:not(.prose *) {
   margin: 40px 0;
   font-size: 64px;
   line-height: 70px;
@@ -90,6 +90,21 @@ h1 {
     line-height: 32px;
   }
 }
+
+/* Prose styles for blog content */
+.prose h1 { font-size: 2.25rem; line-height: 2.5rem; font-weight: bold; margin: 1.5rem 0 1rem; }
+.prose h2 { font-size: 1.875rem; line-height: 2.25rem; font-weight: bold; margin: 1.5rem 0 0.75rem; }
+.prose h3 { font-size: 1.5rem; line-height: 2rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+.prose h4 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+.prose h5 { font-size: 1.125rem; line-height: 1.5rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+.prose h6 { font-size: 1rem; line-height: 1.5rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+.prose p { margin: 1rem 0; }
+.prose ul, .prose ol { margin: 1rem 0; padding-left: 1.5rem; }
+.prose li { margin: 0.25rem 0; }
+.prose a { color: var(--hover); text-decoration: underline; }
+.prose blockquote { border-left: 3px solid var(--gray); padding-left: 1rem; margin: 1rem 0; font-style: italic; }
+.prose code { background: var(--darkGray); padding: 0.125rem 0.25rem; border-radius: 0.25rem; font-size: 0.875rem; }
+.prose pre { background: var(--darkGray); padding: 1rem; border-radius: 0.5rem; overflow-x: auto; margin: 1rem 0; }
 
 p {
   margin: 24px 0;

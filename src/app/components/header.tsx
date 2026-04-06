@@ -5,10 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <div className="flex justify-between items-center py-7">
       <Link href="/">
@@ -42,7 +48,7 @@ export default function Header() {
           setTheme(theme === "dark" || theme === "system" ? "light" : "dark")
         }
       >
-        {theme === "dark" ? <FiSun size={20} /> : <BsMoonFill />}
+        {mounted && (theme === "dark" ? <FiSun size={20} /> : <BsMoonFill />)}
       </button>
     </div>
   );

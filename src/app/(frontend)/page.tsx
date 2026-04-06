@@ -5,28 +5,25 @@ import {
   AiOutlineEnvironment,
 } from 'react-icons/ai'
 import Link from 'next/link'
-// import Blogs from "./Components/Blogs";
-// import Arsenal from "./Components/Intro";
-// import { getAllBlogs } from "./lib/blog";
 import Image from 'next/image'
 import Intro from '../components/Intro'
+import { getPayload } from 'payload'
+import config from '@payload-config'
 
 export const metadata = {
   title: 'Home | Roble',
   description: '...',
 }
 
-const technologies = [
-  { name: 'Typescript', image: '/images/typescript.png', height: 16, width: 16 },
-  { name: 'React', image: '/images/react.png', height: 16, width: 16 },
-  { name: 'Redux', image: '/images/redux.png', height: 16, width: 16 },
-  { name: 'Node JS', image: '/images/node.png', height: 16, width: 16 },
-  { name: 'Next JS', image: '/images/next.png', height: 16, width: 16 },
-  { name: 'MongoDB', image: '/images/mongo.png', height: 16, width: 16 },
-  { name: 'Tailwind CSS', image: '/images/tailwind.png', height: 13, width: 18 },
-]
-
 export default async function Home() {
+  const payload = await getPayload({ config })
+
+  const { docs: familiarTech } = await payload.find({
+    collection: 'tech-stacks',
+    where: {
+      familiar: { equals: true },
+    },
+  })
   return (
     <div className="py-5">
       <Intro />
@@ -95,18 +92,21 @@ export default async function Home() {
       <div className="py-5">
         <h3 className="text-gray">What im familiar with:</h3>
         <div className="flex flex-wrap gap-1 mt-4">
-          {technologies.map((technology, index) => (
+          {familiarTech.map((tech) => (
             <div
-              key={index}
-              className="flex items-center space-x-1  py-1.5 px-2  rounded-sm bg-darkGray hover:cursor-pointer"
+              key={tech.id}
+              className="flex items-center space-x-1 py-1.5 px-2 rounded-sm bg-darkGray hover:cursor-pointer"
             >
-              <Image
-                src={technology.image}
-                height={technology.height}
-                width={technology.width}
-                alt={technology.name}
-              />
-              <h2 className="text-xs">{technology.name}</h2>
+              {tech.icon && typeof tech.icon === 'object' && (
+                <Image
+                  src={tech.icon.url || ''}
+                  height={16}
+                  width={16}
+                  alt={tech.name}
+                  className="w-4 h-4 object-contain"
+                />
+              )}
+              <h2 className="text-xs">{tech.name}</h2>
             </div>
           ))}
         </div>
