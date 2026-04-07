@@ -76,6 +76,16 @@ export const Posts: CollectionConfig = {
         },
       },
     },
+    {
+      name: 'featured',
+      type: 'checkbox',
+      label: 'Featured',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description: 'Show on homepage',
+      },
+    },
   ],
   timestamps: true,
 }

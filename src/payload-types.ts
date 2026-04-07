@@ -198,6 +198,10 @@ export interface Post {
   featuredImage?: (number | null) | Media;
   status?: ('draft' | 'published') | null;
   publishedAt?: string | null;
+  /**
+   * Show on homepage
+   */
+  featured?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -435,6 +439,7 @@ export interface PostsSelect<T extends boolean = true> {
   featuredImage?: T;
   status?: T;
   publishedAt?: T;
+  featured?: T;
   updatedAt?: T;
   createdAt?: T;
 }

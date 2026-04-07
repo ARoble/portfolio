@@ -39,8 +39,8 @@
 }
 
 html {
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 28px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -52,13 +52,13 @@ body,
 
 body {
   font-family: system-ui;
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 28px;
   margin: 0;
 
   @media (max-width: 1024px) {
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 

@@ -24,11 +24,24 @@ export default async function Home() {
       familiar: { equals: true },
     },
   })
+
+  const { docs: featuredPosts } = await payload.find({
+    collection: 'posts',
+    where: {
+      and: [
+        { status: { equals: 'published' } },
+        { featured: { equals: true } },
+      ],
+    },
+    sort: '-publishedAt',
+    limit: 3,
+  })
+
   return (
     <div className="py-5">
       <Intro />
       <div className="flex items-center space-x-5 pt-8">
-        <div className="relative h-28 w-28 rounded-full overflow-hidden flex-shrink-0">
+        <div className="relative h-38 w-38 rounded-full overflow-hidden flex-shrink-0">
           <Image
             src="/images/roble1.jpg"
             className="object-cover object-center"
@@ -36,7 +49,7 @@ export default async function Home() {
             alt="Roble"
           />
         </div>
-        <div className="space-y-1.5">
+        <div className="space-y-2">
           <div>
             <Link
               href="https://twitter.com/_arooble"
@@ -125,10 +138,31 @@ export default async function Home() {
       {/* CURRENTLY LEARNING  */}
       {/* BLOG SECTION */}
       <div className="py-5">
-        <h3 className="text-gray">Latests posts</h3>
-
-        {/* <Blogs blogs={blogs} /> */}
-
+        <h3 className="text-gray">Featured posts</h3>
+        <div className="py-4 space-y-3">
+          {featuredPosts.length === 0 ? (
+            <p className="text-gray text-sm">No featured posts yet.</p>
+          ) : (
+            featuredPosts.map((post) => (
+              <Link
+                key={post.id}
+                href={`/blog/${post.slug}`}
+                className="grid grid-cols-3 md:grid-cols-4 hover:text-hover"
+              >
+                <span className="text-gray">
+                  {post.publishedAt
+                    ? new Date(post.publishedAt).toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })
+                    : ''}
+                </span>
+                <span className="col-span-2 md:col-span-3">{post.title}</span>
+              </Link>
+            ))
+          )}
+        </div>
         <Link href="/blog" className="text-gray underline hover:text-hover hover:cursor-pointer">
           See all
         </Link>
