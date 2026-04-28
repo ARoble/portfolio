@@ -7,8 +7,8 @@ import { Montserrat } from 'next/font/google'
 const inter = Montserrat({ subsets: ["latin"] })
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  description: 'Full-stack developer portfolio.',
+  title: 'Roble',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

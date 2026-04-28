@@ -7,6 +7,7 @@ import {
 import Link from 'next/link'
 import Image from 'next/image'
 import Intro from '../components/Intro'
+import FlipAvatar from '../components/FlipAvatar'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
@@ -41,14 +42,7 @@ export default async function Home() {
     <div className="py-5">
       <Intro />
       <div className="flex items-center space-x-5 pt-8">
-        <div className="relative h-38 w-38 rounded-full overflow-hidden flex-shrink-0">
-          <Image
-            src="/images/roble1.jpg"
-            className="object-cover object-center"
-            fill
-            alt="Roble"
-          />
-        </div>
+        <FlipAvatar />
         <div className="space-y-2">
           <div>
             <Link
@@ -116,7 +110,7 @@ export default async function Home() {
                   height={16}
                   width={16}
                   alt={tech.name}
-                  className="w-4 h-4 object-contain"
+                  className="object-contain"
                 />
               )}
               <h2 className="text-xs">{tech.name}</h2>
@@ -130,7 +124,7 @@ export default async function Home() {
         <h3 className="text-gray">Currently learning:</h3>
         <div className="flex flex-wrap gap-1 mt-4">
           <div className="flex items-center space-x-1  py-1.5 px-2  rounded-sm bg-darkGray hover:cursor-pointer">
-            <Image src="/images/aws.png" height={16} width={16} alt="AWS services" />
+            <Image src="/images/aws.png" height={16} width={16} alt="AWS services" style={{ height: 'auto' }} />
             <h2 className="text-xs">AWS</h2>
           </div>
         </div>
